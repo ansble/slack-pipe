@@ -1,0 +1,40 @@
+{
+  "name": "pipe-slack",
+  "version": "1.0.0",
+  "description": "a simple pipe to slack util for",
+  "main": "bin/slack-pipe",
+  "bin": {
+    "pipe-slack": "./bin/slack-pipe"
+  },
+  "preferGlobal": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "release": "tom",
+    "release:minor": "tom -type=minor",
+    "release:major": "tom -type=major"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ansble/slack-pipe.git"
+  },
+  "keywords": [
+    "slack",
+    "pipe",
+    "CLI",
+    "terminal",
+    "util"
+  ],
+  "author": {
+    "name": "Daniel Sellers",
+    "email": "daniel@designfrontier.net",
+    "url": "https://github.com/designfrontier"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ansble/slack-pipe/issues"
+  },
+  "homepage": "https://github.com/ansble/slack-pipe#readme",
+  "devDependencies": {
+    "tom-sawyer": "^0.1.4"
+  }
+}

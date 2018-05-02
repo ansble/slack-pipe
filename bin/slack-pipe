@@ -1,0 +1,51 @@
+#!/usr/bin/env node
+
+const http = require('https');
+let data;
+
+process.stdin.resume();
+process.stdin.setEncoding('utf8');
+
+process.stdin.on('data', function(chunk) {
+  if (chunk) {
+    if (data) {
+      data += chunk;
+    } else {
+      data = chunk;
+    }
+  }
+});
+
+process.stdin.on('end', function() {
+  const payload = {
+    channel: process.argv[2] || process.env.SLACK_CHANNEL || 'test-slackbot',
+    username: process.argv[3] || process.env.SLACK_BOT_NAME || 'slack-pipe-bot',
+    icon_emoji: process.argv[4] || process.env.SLACK_EMOJI || ':robot_face:',
+    text: data
+  }
+
+  const options = {
+    hostname: 'hooks.slack.com',
+    port: 443,
+    path: process.env.SLACK_URL,
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded'
+    }
+  };
+
+  const req = http.request(options, (res) => {
+    res.setEncoding('utf8');
+    res.on('data', (chunk) => {
+      console.log(`BODY: ${chunk}`);
+    });
+  });
+
+  req.on('error', (e) => {
+    console.error(`problem with request: ${e.message}`);
+  });
+
+  // write data to request body
+  req.write(JSON.stringify(payload));
+  req.end();
+});
