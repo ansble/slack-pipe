@@ -2,9 +2,9 @@
   "name": "pipe-slack",
   "version": "1.0.0",
   "description": "a simple pipe to slack util for",
-  "main": "bin/slack-pipe",
+  "main": "bin/pipe-slack",
   "bin": {
-    "pipe-slack": "./bin/slack-pipe"
+    "pipe-slack": "./bin/pipe-slack"
   },
   "preferGlobal": true,
   "scripts": {
