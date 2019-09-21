@@ -35,6 +35,6 @@
   },
   "homepage": "https://github.com/ansble/slack-pipe#readme",
   "devDependencies": {
-    "tom-sawyer": "^0.1.4"
+    "tom-sawyer": "^0.3.0"
   }
 }
