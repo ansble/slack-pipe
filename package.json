@@ -1,6 +1,6 @@
 {
   "name": "pipe-slack",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "a simple pipe to slack util for",
   "main": "bin/pipe-slack",
   "bin": {
