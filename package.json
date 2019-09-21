@@ -10,8 +10,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "release": "tom",
-    "release:minor": "tom -type=minor",
-    "release:major": "tom -type=major"
+    "release:minor": "tom --type minor",
+    "release:major": "tom --type major"
   },
   "repository": {
     "type": "git",
