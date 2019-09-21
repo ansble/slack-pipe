@@ -13,6 +13,8 @@ process.stdin.on('data', function(chunk) {
     } else {
       data = chunk;
     }
+
+    process.stdout.write(chunk);
   }
 });
 
